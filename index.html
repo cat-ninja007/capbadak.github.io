@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Dinata - Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Dasar & Reset */
+        :root {
+            --primary-color: #007bff; /* Biru Profesional */
+            --secondary-color: #f4f7fa; /* Latar belakang terang */
+            --text-color: #333;
+            --dark-color: #1a1a1a;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Dark Mode Toggle --- */
+        body.dark-mode {
+            --secondary-color: #1a1a1a;
+            --text-color: #f4f7fa;
+            --card-bg: #2a2a2a;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* --- Kontainer Utama --- */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* --- Header (Kartu Nama Utama) --- */
+        header {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 10px 0 5px;
+            color: var(--primary-color);
+        }
+
+        header h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #6c757d;
+            margin: 0 0 20px;
+        }
+
+        /* --- Navigasi & Tombol --- */
+        .nav-links a {
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- Bagian Konten --- */
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        section h3 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* --- Keahlian --- */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid #ddd;
+        }
+
+        body.dark-mode .skill-item {
+            background-color: #3b3b3b;
+            border: 1px solid #555;
+            color: #90ee90; /* Warna neon di dark mode */
+        }
+
+        /* --- Kontak --- */
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer & Tombol Dark Mode --- */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        #mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border: none;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        #mode-toggle:hover {
+            background-color: var(--primary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="mode-toggle">☀️ Mode Gelap</button>
+
+    <div class="container">
+        <header id="home">
+            <img src="https://via.placeholder.com/120/007bff/ffffff?text=RD" alt="Foto Profil Rio Dinata" class="profile-pic">
+            <h1>Rio Dinata</h1>
+            <h2>Full-Stack Developer | Membangun Solusi Web Skalabel</h2>
+            <div class="nav-links">
+                <a href="#about">Tentang Saya</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#projects">Portofolio</a>
+                <a href="#contact">Kontak</a>
+            </div>
+            <a href="#projects" class="cta-button">Lihat Proyek Terbaru</a>
+        </header>
+
+        <section id="about">
+            <h3>Tentang Saya</h3>
+            <p>Saya seorang programmer yang bersemangat menciptakan aplikasi web yang elegan dan berkinerja tinggi. Dengan pengalaman 5 tahun dalam ekosistem **JavaScript** dan **Python**, saya ahli dalam mengubah ide kompleks menjadi produk digital yang intuitif dan fungsional.</p>
+            <p>Fokus utama saya adalah pada pengembangan *backend* yang kuat menggunakan **Node.js** dan *frontend* yang dinamis dengan **React**. Saya selalu mencari cara untuk mengoptimalkan kinerja dan menerapkan praktik *coding* terbaik (clean code).</p>
+        </section>
+
+        <section id="skills">
+            <h3>Keahlian Teknis</h3>
+            <ul class="skills-list">
+                <li class="skill-item">JavaScript (ES6+)</li>
+                <li class="skill-item">Python</li>
+                <li class="skill-item">React.js</li>
+                <li class="skill-item">Next.js</li>
+                <li class="skill-item">Node.js & Express</li>
+                <li class="skill-item">PostgreSQL & MongoDB</li>
+                <li class="skill-item">REST APIs</li>
+                <li class="skill-item">Git & GitHub</li>
+                <li class="skill-item">Docker</li>
+                <li class="skill-item">Tailwind CSS</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h3>Portofolio Pilihan</h3>
+            <h4>Proyek E-Commerce Analitik</h4>
+            <p>Platform dashboard untuk visualisasi data penjualan secara *real-time*. **Tech:** React, Node.js, PostgreSQL.</p>
+            <p><a href="#" target="_blank">[Lihat Demo]</a> | <a href="#" target="_blank">[Kode GitHub]</a></p>
+            <hr>
+            <h4>Aplikasi Manajemen Tugas Cerdas</h4>
+            <p>Aplikasi to-do list dengan fitur prioritas berbasis $AI$ sederhana. **Tech:** Next.js, Firebase.</p>
+            <p><a href="#" target="_blank">[Lihat Demo]</a> | <a href="#" target="_blank">[Kode GitHub]</a></p>
+        </section>
+
+        <section id="contact">
+            <h3>Hubungi Saya</h3>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:halo.riodinata@email.com">halo.riodinata@email.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/riodinata" target="_blank">linkedin.com/in/riodinata</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/riodinata" target="_blank">github.com/riodinata</a></p>
+                <p>Tertarik bekerja sama? Silakan kirimkan pesan!</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Rio Dinata | Dibuat dengan HTML, CSS, dan JS sederhana.</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT: LOGIKA DARK MODE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('mode-toggle');
+            const body = document.body;
+            const currentMode = localStorage.getItem('theme');
+
+            // 1. Terapkan mode yang tersimpan saat memuat
+            if (currentMode === 'dark') {
+                body.classList.add('dark-mode');
+                toggleButton.textContent = '🌙 Mode Terang';
+            } else {
+                toggleButton.textContent = '☀️ Mode Gelap';
+            }
+
+            // 2. Tambahkan event listener untuk tombol
+            toggleButton.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+
+                // 3. Simpan preferensi pengguna dan perbarui teks tombol
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    toggleButton.textContent = '🌙 Mode Terang';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    toggleButton.textContent = '☀️ Mode Gelap';
+                }
+            });
+        });
+        
+        // --- JAVASCRIPT: SMOOTH SCROLLING ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
